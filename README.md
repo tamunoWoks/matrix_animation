@@ -23,3 +23,8 @@ This Python script simulates the iconic **Matrix "digital rain" effect**, where 
 4. **Animation loop**  
    - Each row is printed one line at a time across all columns.  
    - After finishing one row, the script prints a newline and sleeps for `0.1` seconds before drawing the next row.  
+
+### Notes:
+- The program runs infinitely until stopped manually.
+- Best viewed in a dark terminal background for full "Matrix" effect.
+- Adjust width and speed to fit your terminal size and performance.
