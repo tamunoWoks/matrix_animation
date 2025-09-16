@@ -45,6 +45,8 @@ while True:
                 print(random.choice([0, 1]), end='')
                 columns[i] -= 1  # Decrement the counter for this column.
 ```
+5. After the `else` block ends, the `for` loop block also ends. The `print(`) call after the `for` loop prints a newline, as the previous `print()` calls for each column pass the `end=''` keyword argument to prevent a newline from being printed after each column. For each row printed, the program introduces a tenth-of-a-second pause by calling `time.sleep(0.1)`.
+&nbsp;&nbsp;&nbsp;&nbsp;The final part of the program is an except block that exits the program if the user pressed `ctrl-C` to raise a `KeyboardInterrupt` exception.
 
 ### Notes:
 - The program runs infinitely until stopped manually.
