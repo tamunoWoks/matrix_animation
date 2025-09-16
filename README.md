@@ -9,22 +9,11 @@ This Python script simulates the iconic **Matrix "digital rain" effect**, where 
 - Graceful exit with **Ctrl+C**  
 
 
-### How It Works:
-1. **Columns tracking**  
-   - Each column has a counter stored in the `columns` list.  
-   - A counter of `0` means the column is empty.  
-   - A positive counter means that many more `0`/`1`s will appear before the column goes empty again.
-2. **Random stream generation**  
-   - On each frame, each column has a **2% chance** of starting a new stream.  
-   - Stream lengths are randomized between **4 and 14 characters**.
-3. **Printing logic**  
-   - If a column has no active stream → print a space `" "`.  
-   - If a column is active → print a random `0` or `1`, then decrement its counter.
-4. **Animation loop**  
-   - Each row is printed one line at a time across all columns.  
-   - After finishing one row, the script prints a newline and sleeps for `0.1` seconds before drawing the next row.  
+### Code Review:
+This program creates a scrolling animation by printing rows of text inside an infinite loop that is stopped when the user presses ctrl-C. The main data structure in this program is the columns list, which holds 70 integers, one for each column of output. When an integer in columns is 0, it prints an empty space for that column. When it’s greater than 0, it randomly prints a 0 or 1 and then decrements the integer. Once the integer is reduced to 0, that column prints an empty space again. The program randomly sets the integers in columns to integers between 4 and 14 to produce streams of random binary 0s and 1s.
 
 ### Notes:
 - The program runs infinitely until stopped manually.
 - Best viewed in a dark terminal background for full "Matrix" effect.
 - Adjust width and speed to fit your terminal size and performance.
+
