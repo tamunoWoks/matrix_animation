@@ -25,7 +25,15 @@ WIDTH = 70  # The number of columns
 try:
     columns = [0] * WIDTH
 ```
-
+3.  We want this program to run forever, so we place it all inside an infinite `while True:` loop. Inside this loop is a `for` loop that iterates over each column of a single row. The loop variable `i` represents the indexes of columns; it begins at `0` and goes up to but does not include WIDTH. The value in columns[0] represents what should be printed in the leftmost column, columns[1] does so for the second column from the left, and so on.
+&nbsp;&nbsp;&nbsp;&nbsp;For each column, there is a two percent chance that the integer at columns[i] is set to a number between `4` and `14`. We calculate this chance by comparing `random.random()` (a function that returns a random float between 
+0.0 and 1.0) to 0.02. If you want the streams to be denser or sparser, you can increase or decrease this number, respectively. We set the counter integers for each column to a random number between 4 and 14.
+```python
+while True:
+        for i in range(WIDTH):
+            if random.random() < 0.02:
+                columns[i] = random.randint(4, 14)
+```
 ### Notes:
 - The program runs infinitely until stopped manually.
 - Best viewed in a dark terminal background for full "Matrix" effect.
