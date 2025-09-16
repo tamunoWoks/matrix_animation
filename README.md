@@ -47,6 +47,12 @@ while True:
 ```
 5. After the `else` block ends, the `for` loop block also ends. The `print(`) call after the `for` loop prints a newline, as the previous `print()` calls for each column pass the `end=''` keyword argument to prevent a newline from being printed after each column. For each row printed, the program introduces a tenth-of-a-second pause by calling `time.sleep(0.1)`.
 &nbsp;&nbsp;&nbsp;&nbsp;The final part of the program is an except block that exits the program if the user pressed `ctrl-C` to raise a `KeyboardInterrupt` exception.
+```python
+        print()  # Print a newline at the end of the row of columns.
+        time.sleep(0.1)  # Each row pauses for one tenth of a second.
+ except KeyboardInterrupt:
+    sys.exit()  # When Ctrl-C is pressed, end the program.
+```
 
 ### Notes:
 - The program runs infinitely until stopped manually.
