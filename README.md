@@ -34,6 +34,18 @@ while True:
             if random.random() < 0.02:
                 columns[i] = random.randint(4, 14)
 ```
+4. Also inside the `for` loop, the program determines if it should print a random `0` or `1` binary number or an empty space. If columns[i] is 0, it prints an empty space. Otherwise, it passes the list [0, 1] to the `random.choice()` function, which returns a random value from that list to print. The code also decrements the counter at columns[i] so that it gets closer to 0 and no longer prints binary numbers.
+```python
+         # Print a character in this column:
+            if columns[i] == 0:
+                # Change this ' '' to '.' to see the empty spaces:
+                print(' ', end='') 
+            else:
+                # Print a 0 or 1:
+                print(random.choice([0, 1]), end='')
+                columns[i] -= 1  # Decrement the counter for this column.
+```
+
 ### Notes:
 - The program runs infinitely until stopped manually.
 - Best viewed in a dark terminal background for full "Matrix" effect.
